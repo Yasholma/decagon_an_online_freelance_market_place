@@ -1,0 +1,53 @@
+{
+  "Freelancers": [
+    {
+      "name": "Yahaya Yohanna",
+      "email": "yasholma@yahoo.com",
+      "password": "123456",
+      "skill": "Java Developer",
+      "id": 1
+    },
+    {
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "password": "123456",
+      "skill": "Footballer",
+      "id": 2
+    },
+    {
+      "name": "Joe Felix",
+      "email": "joefelix@gmail.com",
+      "password": "123456",
+      "skill": "Designer",
+      "id": 3
+    },
+    {
+      "name": "Mary Jane",
+      "email": "maryjane",
+      "password": "123456",
+      "skill": "C# Developer",
+      "id": 4
+    },
+    {
+      "name": "Moose Ken",
+      "email": "yasholma1@gmail.com",
+      "password": "123456",
+      "skill": "Designer",
+      "id": 5
+    },
+    {
+      "name": "Adamu Ali",
+      "email": "adamu@gmail.com",
+      "password": "123456",
+      "skill": "Tester",
+      "id": 7
+    },
+    {
+      "name": "Smith Kingsley",
+      "email": "smith@gmail.com",
+      "password": "123456",
+      "skill": "Analyst",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-family: Quicksand;
+}
+
+nav.black {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+nav .logo {
+    float: left;
+    height: 30px;
+    padding: 10px 20px;
+    font-size: 24px;
+    transition: .3s;
+}
+
+nav.black .logo {
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    line-height: 60px;
+    color: #151515;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: .3s;
+    font-size: 16px;
+}
+
+nav.black ul li a {
+    color: #fff;
+}
+
+nav ul li a:focus {
+    outline: none;
+}
+
+nav ul li a.active {
+    background: #E2472F;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.signup {
+    margin-right: 10px;
+    background: #388bda !important;
+}
+
+.sect1 {
+    margin-top: 80px;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/apple.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.top-freelancers .card {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#logout {
+    cursor: pointer;
+}
