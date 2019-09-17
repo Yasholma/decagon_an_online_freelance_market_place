@@ -23,7 +23,7 @@
         <div class="logo">Logo</div>
         <ul>
             <li><a href="./index.html">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="./about.html">About Us</a></li>
             <li id="signup"><a href="./register.html" class="active signup">Sign Up</a></li>
             <li id="signin"><a href="./login.html" class="active signin">Sign In</a></li>
             <li id="profile"><a href="./profile.html" class="active signup"><i class="fas fa-user-circle"></i> Profile</a></li>
@@ -33,15 +33,15 @@
     <section class="sect1">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card p-4 mt-4" style="background: transparent; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
-                        <div class="card-header">
-                            <h4 class="text-center text-white"><span id="name">My</span> Profile <button id="deleteAccount" class="btn btn-danger btn-sm float-right"><i class="fas fa-exclamation-circle"></i> Delete my account</button></h4>
+                <div class="col-md-8 mx-auto" id="profile-page">
+                    <div class="card p-4 mt-4"  style="background: transparent; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
+                        <div>
+                            <h4 class="text-center"><span id="name">My</span> Profile <button id="deleteAccount" class="btn btn-danger btn-sm float-right"><i class="fas fa-exclamation-circle"></i> Delete my account</button></h4>
                         </div>
                         <div class="card-body" id="profile-info">
                             
                         </div>
-                        <div class="card-footer">
+                        <div>
                             <a href="./index.html" class="btn btn-primary"><i class="fas fa-chevron-circle-left"></i> Back to Home</a>
                             <a href="./editProfile.html" class="btn btn-info float-right"><i class="fas fa-edit"></i> Edit Profile</a>
                         </div>

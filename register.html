@@ -22,7 +22,7 @@
         <div class="logo">Logo</div>
         <ul>
             <li><a href="./index.html">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="./about.html">About Us</a></li>
             <li><a href="./register.html" class="active signup">Sign Up</a></li>
             <li><a href="./login.html" class="active">Sign In</a></li>
         </ul>
@@ -33,6 +33,7 @@
                 <div class="col-md-4 mx-auto mt-4">
                     <form method="post" class="card bg-white p-4">
                         <h5 class="text-center text-uppercase">Register as a FreeLancer</h5>
+                        <div class="alert alert-danger d-none" id="registerGeneralError"><small><strong>All fields are required</strong></small></div>
                         <hr>
 
                         <div class="form-group">
@@ -48,6 +49,11 @@
                         <div class="form-group">
                             <input type="password" name="password" id="password" class="form-control" placeholder="Enter password">
                             <small id="passwordError" class="text-danger"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="confirm" id="confirm" class="form-control" placeholder="Confirm password">
+                            <small id="confirmError" class="text-danger"></small>
                         </div>
 
                         <div class="form-group">

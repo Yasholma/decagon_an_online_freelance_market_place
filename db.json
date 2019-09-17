@@ -1,9 +1,9 @@
 {
   "Freelancers": [
     {
-      "name": "Yahaya Yohanna",
+      "name": "Cybertech Yasholma",
       "email": "yasholma@yahoo.com",
-      "password": "654321",
+      "password": "Admin@12",
       "skill": "Java Developer",
       "id": 1
     },
@@ -48,6 +48,20 @@
       "password": "123456",
       "skill": "Analyst",
       "id": 9
+    },
+    {
+      "name": "Fola Kayode",
+      "email": "folakayode@gmail.com",
+      "password": "123456",
+      "skill": "C# Developer",
+      "id": 10
+    },
+    {
+      "name": "Christiano Ronaldo",
+      "email": "ronaldo@gmail.com",
+      "password": "Admin@12",
+      "skill": "Footballer",
+      "id": 11
     }
   ]
 }

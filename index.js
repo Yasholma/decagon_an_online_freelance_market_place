@@ -1,3 +1,21 @@
+// Email Validation
+function validateEmail(email) {
+    let re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}  
+
+// Validate Password
+function validatePassword(password) {
+    let re = /^(?=.{6,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
+    return re.test(password);
+}
+
+// Password Confirmation
+function confirmPassword(password, confirm) {
+    return password.trim() === confirm.trim();
+}
+
+
 $(document).ready(function () {
 
     // Handling Sessions
@@ -52,35 +70,60 @@ $(document).ready(function () {
                 );
             });
         })
-        .catch(e => alert("Error loading data due to network issues"));
-
+        .catch(e => alert("Error loading data due to network issues"));  
 
     // Registering a new freelancer
     $("#register").on('click', (e) => {
         e.preventDefault();
+        // registerGeneralErrorTimeOut
+        setTimeout(() => {
+            $("#registerGeneralError").addClass("d-none");
+        }, 5000);
 
         let name = $("#name").val();
         let email = $("#email").val();
         let password = $("#password").val();
+        let confirm = $("#confirm").val();
         let skill = $("#skill").val();
 
         // Error feilds
         let nameError = $("#nameError");
         let emailError = $("#emailError");
         let passwordError = $("#passwordError");
+        let confirmError = $("#confirmError");
         let skillError = $("#skillError");
+        let registerGeneralError = $("#registerGeneralError");
 
-        if (name === "" || email === "" || password === "" || skill === "") {
-            nameError.text("Field is required");
-            emailError.text("Field is required");
-            passwordError.text("Field is required");
-            skillError.text("Field is required");
-        } else if (name === "") {
-
+        // Validations
+        if (name === "" || email === "" || password === "" || confirm === "" || skill === "") {
+            registerGeneralError.removeClass('d-none');
+        } else if (name === "" || name.length < 6) {
+            $("#name").css('border', '1px solid red');
+            nameError.text("Please, enter a valid name");
+        } else if (!validateEmail(email)) {
+            $("#email").css('border', '1px solid red');
+            emailError.text("Please, enter a valid email address");
+        } else if (password.length < 6 || password === "") {
+            $("#password").css('border', '1px solid red');
+            passwordError.text("Password minimum length is 6");
+        } else if (!validatePassword(password)) {
+            $("#password").css('border', '1px solid red');
+            passwordError.text("Password is weak. (E.g) Abc@123");
+        } else if (!confirmPassword(password, confirm)) {
+            $("#password").css('border', '1px solid red');
+            $("#confirm").css('border', '1px solid red');
+            confirmError.text("Password doesn't match");
+        } else if (skill.length <= 3 || skill === "") {
+            $("#skill").css('border', '1px solid red');
+            skillError.text("Skill minimum length is 4");
         } else {
             // All fields have been filled
-            const input = { name, email, password, skill };
+            name = name.trim();
+            email = email.trim();
+            password = password.trim();
+            skill = skill.trim();
 
+            const input = { name, email, password, skill };
 
             // Check if this email already exist
             axios.get("http://localhost:3000/Freelancers")
@@ -134,8 +177,6 @@ $(document).ready(function () {
                     for (let user of users) {
                         if (user.email === input.email && user.password === input.password) {
                             // User found... login 
-                            console.log("Found");
-
                             $("#email").val('');
                             $("#password").val('');
                             emailError.text('');
@@ -145,7 +186,6 @@ $(document).ready(function () {
 
                             // set session and redirect to home
                             $.session.set('userId', user.id);
-                            console.log($.session.get('userId'));
 
                             // redirect freelancer to the homepage
                             window.location.replace("index.html");
@@ -254,15 +294,41 @@ $(document).ready(function () {
             let password = $("#password").val();
             let skill = $("#skill").val();
 
-            // validation goes here
+            // Error feilds
+            let nameError = $("#nameError");
+            let passwordError = $("#passwordError");
+            let skillError = $("#skillError");
+            let registerGeneralError = $("#registerGeneralError");
 
-            const input = { name, email, password, skill };
+            if (name === "" || password === "" || skill === "") {
+                registerGeneralError.removeClass('d-none');
+            } else if (name === "" || name.length < 6) {
+                $("#name").css('border', '1px solid red');
+                nameError.text("Please, enter a valid name");
+            } else if (password.length < 6 || password === "") {
+                $("#password").css('border', '1px solid red');
+                passwordError.text("Password minimum length is 6");
+            } else if (!validatePassword(password)) {
+                $("#password").css('border', '1px solid red');
+                passwordError.text("Password is weak. (E.g) Abc@123");
+            } else if (skill.length <= 3 || skill === "") {
+                $("#skill").css('border', '1px solid red');
+                skillError.text("Skill minimum length is 4");
+            } else {
+                // Remove white trailing spaces from all input values
+                name = name.trim();
+                email = email.trim();
+                password = password.trim();
+                skill = skill.trim();
 
-            axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
-                .then(response => {
-                    alert("Your profile has been updated successfully");
-                })
-                .catch(e => console.log(e));
+                const input = { name, email, password, skill };
+
+                axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
+                    .then(res => {
+                        alert("Your profile has been updated successfully");
+                    })
+                    .catch(e => console.log(e));
+            }
         });
     }
     

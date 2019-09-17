@@ -1,9 +1,7 @@
 (function($){
 
     $.session = {
-
         _id: null,
-
         _cookieCache: undefined,
 
         _init: function()
