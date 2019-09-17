@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FMP | Profile</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="./assets/css/all.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- JQuery and Session -->
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/jquerysession.js"></script>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">Logo</div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li id="signup"><a href="./register.html" class="active signup">Sign Up</a></li>
+            <li id="signin"><a href="./login.html" class="active signin">Sign In</a></li>
+            <li id="profile"><a href="./profile.html" class="active signup"><i class="fas fa-user-circle"></i> Profile</a></li>
+            <li id="logout"><a class="active logout">Logout <i class="fas fa-sign-out"></i></a></li>
+        </ul>
+    </nav>
+    <section class="sect1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card p-4 mt-4">
+                        <div class="card-header">
+                            <h4 class="text-center"><span id="name"></span>'s Profile</h4>
+                        </div>
+                       <div class="row">
+                           <div class="col-md-8 mx-auto">
+                                <div class="card-body" id="freelance-profile-info">
+                                    <!-- jQuery populates data here -->
+                                </div>
+                           </div>
+                       </div>
+                        <div class="card-footer">
+                            <a href="./index.html" class="btn btn-outline-primary"><i class="fas fa-chevron-circle-left"></i> Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/all.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Axios -->
+    <script src="./assets/js/axios.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="./index.js"></script>
+  </body>
+</html>

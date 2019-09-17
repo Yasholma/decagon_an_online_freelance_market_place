@@ -4,6 +4,7 @@ $(document).ready(function () {
     $("#logout").hide();
     $("#profile").hide();
     const userId = $.session.get('userId') != 0 ? $.session.get('userId') : 0;
+    let path = $(location).attr('pathname');
     if (userId === undefined) {
         $("#logout").hide();
         $("#profile").hide();
@@ -92,7 +93,6 @@ $(document).ready(function () {
                         }
                     }
 
-
                     // Registration proceeds
                     axios.post("http://localhost:3000/Freelancers", input)
                         .then(response => {
@@ -103,8 +103,6 @@ $(document).ready(function () {
                 })
                 .catch(e => console.log(e));
         }
-
-
     });
 
 
@@ -168,9 +166,7 @@ $(document).ready(function () {
 
     /*  Profile handling goes here..  **/
     // Only do this in profile.html page
-    let path = $(location).attr('pathname');
     if (path === '/profile.html') {
-        
         // get the user info from the database and preload the fields
         axios.get(`http://localhost:3000/Freelancers/${userId}`)
             .then(response => {
@@ -207,6 +203,68 @@ $(document).ready(function () {
         })
                 
     }
+
+
+
+
+    // Only do this in view.html
+    if (path === '/view.html') {
+        const full_path = window.location.href;
+        const full_path_arr = full_path.split('id=');
+        
+        const id = full_path_arr[1];
+
+        // Get user info according to the id
+        axios.get(`http://localhost:3000/Freelancers/${id}`)
+            .then(response => {
+                const user = response.data;
+                $("#name").text(`${user.name}`);
+                $("#freelance-profile-info").append(
+                    `
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.name}</strong></li>
+                        <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.email}</li>
+                        <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
+                    </ul>
+                    `
+                );
+            })
+            .catch(e => console.log(e));
+    }
+    
+
+    // Only do this in editProfile.html
+    if (path === '/editProfile.html') {
+        // Get the user record from the database and auto fill the fields
+        axios.get(`http://localhost:3000/Freelancers/${userId}`)
+            .then(response => {
+                const user = response.data;
+                $("#name").val(user.name);
+                $("#email").val(user.email);
+                $("#password").val(user.password);
+                $("#skill").val(user.skill);
+            })
+            .catch(e => console.log(e));
+
+        $("#updateBtn").on('click', (e) => {
+            e.preventDefault();
+
+            let name = $("#name").val();
+            let email = $("#email").val();
+            let password = $("#password").val();
+            let skill = $("#skill").val();
+
+            // validation goes here
+
+            const input = { name, email, password, skill };
+
+            axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
+                .then(response => {
+                    alert("Your profile has been updated successfully");
+                })
+                .catch(e => console.log(e));
+        });
+    }
     
 
 
@@ -220,9 +278,5 @@ $(document).ready(function () {
             window.location.replace("login.html");
         }
     }); 
-
-
-
-
 
 }); // End of .readyFunction

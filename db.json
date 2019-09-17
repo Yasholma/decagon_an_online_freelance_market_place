@@ -3,7 +3,7 @@
     {
       "name": "Yahaya Yohanna",
       "email": "yasholma@yahoo.com",
-      "password": "123456",
+      "password": "654321",
       "skill": "Java Developer",
       "id": 1
     },
@@ -13,13 +13,6 @@
       "password": "123456",
       "skill": "Footballer",
       "id": 2
-    },
-    {
-      "name": "Joe Felix",
-      "email": "joefelix@gmail.com",
-      "password": "123456",
-      "skill": "Designer",
-      "id": 3
     },
     {
       "name": "Mary Jane",
@@ -48,6 +41,13 @@
       "password": "123456",
       "skill": "Analyst",
       "id": 8
+    },
+    {
+      "name": "Joe Felix",
+      "email": "joefelix@gmail.com",
+      "password": "123456",
+      "skill": "Analyst",
+      "id": 9
     }
   ]
 }
