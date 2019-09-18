@@ -76,6 +76,20 @@
       "password": "123456@Ade",
       "skill": "Senior  - Hacker",
       "id": 13
+    },
+    {
+      "name": "Uche Mike",
+      "email": "uchemike@gmail.com",
+      "password": "Uche@12",
+      "skill": "Developer",
+      "id": 14
+    },
+    {
+      "name": "Mike King",
+      "email": "mikeking@gmail.com",
+      "password": "Mike@123",
+      "skill": "Modeling",
+      "id": 15
     }
   ]
 }

@@ -62,6 +62,11 @@ nav ul li a.active {
     border-radius: 6px;
 }
 
+/* Styling on banner */
+
+
+/* Utilities */
+
 .signup {
     margin-right: 10px;
     background: #388bda !important;
@@ -74,6 +79,75 @@ nav ul li a.active {
     background-image: url("../img/apple.jpg");
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+
+#left-section {
+    position: absolute;
+    top: 145px;
+    left: 125px;
+}
+
+.display-5 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.1;
+    font-family: Quicksand;
+    color: #c7d5ee;
+    margin-bottom: 30px;
+}
+
+#left-section input[type="text"] {
+    width: 500px;
+    padding: 20px;
+    color: white;
+    background: transparent;
+    margin-right: -84px;
+}
+
+#left-section input[type="text"]:focus {
+    box-shadow: none;
+}
+
+#left-section button {
+    padding: 8px;
+    color: white;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0 5px 5px 0;
+    border-color: white;
+}
+
+#left-section p#popular {
+    margin-left: 190px;
+    margin-bottom: 0px;
+    margin-top: 7px;
+    font-family: Quicksand;
+}
+
+#left-section ul.nav {
+    width: 500px;
+    border-radius: 5px;
+    background: transparent !important;
+}
+
+#left-section ul.nav li {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+#left-section ul.nav li a {
+    font-size: 11px;
+    color: #fff;
+}
+
+#right-section {
+    position: absolute;
+    right: -86px;
+    top: 48px;
 }
 
 .top-freelancers .card {

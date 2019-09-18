@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>FMP | About Us</title>
+    <title>FMP | HomePage</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./assets/css/all.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <!-- Owl Css -->
+    <link rel="stylesheet" href="./assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
     <!-- Custom Css -->
     <link rel="stylesheet" href="./assets/css/custom.css">
     <!-- JQuery and Session -->
@@ -31,20 +34,53 @@
         </ul>
     </nav>
     <section class="sect1">
-        <div class="container">
-          <!-- <div class="col-md-4">
-              <div class="card" style="background: transparent;">
-                <img class="card-img-top" src="https://picsum.photos/200/100" alt="">
-                <div class="card-body">
-                  <h4 class="card-title">Title</h4>
-                  <p class="card-text">Text</p>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" id="left-section">
+            <h4 class="display-5">Find The Perfect Freelance Services For Your Business</h4>
+            <form class="form-inline">
+              <div class="form-group">
+                <label for=""></label>
+                <input type="text" name="" id="" class="form-control" placeholder="">
+                <button class="btn btn-success"><i class="fas fa-search"></i> Search</button>
               </div>
-          </div> -->
+            </form>
+            <p id="popular" class="text-white">Popular Services</p>
+            <ul class="nav justify-content-center mt-2 p-0" style="background: white;">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Web Developer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hacker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Analyst</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Android Developer</a>
+                </li>
+            </ul>
+          </div>
+          <div class="col-md-6 " id="right-section">
+            <div id="owl-example" class="owl-carousel">
+              <img src="./assets/img/slide.png" alt="fmp" class="img-fluid">
+              <img src="./assets/img/slide1.png" alt="fmp" class="img-fluid">
+              <img src="./assets/img/slide2.png" alt="fmp" class="img-fluid">
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <div class="container mt-3 mb-5">
-        
+        <h3 class="text-center display-4" id="index-top-freelancers">All FreeLancers</h3>
+        <div class="row all-freelancers mt-2">
+          <!-- jQuery Populates Data Here... -->
+        </div>
+        <div class="row">
+          <div class="col-md-4 mx-auto">
+            <a href="./index.html" class="btn btn-outline-primary btn-sm btn-block">View Less <i class="fas fa-chevron-circle-up"></i></a>
+          </div>
+        </div>  
     </div>
 
     <!-- Footer -->
@@ -85,6 +121,11 @@
       </div>
     </footer>
 
+
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="./assets/js/popper.min.js"></script>
@@ -92,8 +133,18 @@
     <script src="./assets/js/bootstrap.min.js"></script>
     <!-- Axios -->
     <script src="./assets/js/axios.js"></script>
+    <!-- Owl JS -->
+    <script src="./assets/js/owl.carousel.js"></script>
 
     <!-- Custom Javascript -->
     <script src="./index.js"></script>
+    <script>
+      $("#owl-example").owlCarousel({
+        items: 1,
+        animateOut: 'fadeOut',
+        slideSpeed: 10,
+        autoplay: true
+      });
+    </script>
   </body>
 </html>

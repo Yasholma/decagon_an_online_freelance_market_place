@@ -15,9 +15,28 @@ function confirmPassword(password, confirm) {
     return password.trim() === confirm.trim();
 }
 
+// redirect function
+function redirectTo(url) {
+    window.location.replace(url);
+}
+
+// Authorization redirects
+const uId = $.session.get('userId') != 0 ? $.session.get('userId') : 0;
+let url = $(location).attr('pathname');
+
+// Redirect User if already logged in
+if (url === '/login.html' || url === '/register.html') {
+    // check if user is already logged in
+    if (uId !== undefined) redirectTo('index.html');
+}
+
+ // Redirect User if not logged in
+ if (url === '/profile.html' || url === '/editProfile.html') {
+    if (uId === undefined) redirectTo('login.html');
+ }
+
 
 $(document).ready(function () {
-
     // Handling Sessions
     $("#logout").hide();
     $("#profile").hide();
@@ -47,7 +66,7 @@ $(document).ready(function () {
 
     // Load freelancers from the database on the homepage
     // https://picsum.photos/200/100
-    axios.get("http://localhost:3000/Freelancers")
+    axios.get("http://localhost:3000/Freelancers?_start=0&_end=6")
         .then(response => {
             const users = response.data;
             users.forEach(user => {
@@ -71,6 +90,33 @@ $(document).ready(function () {
             });
         })
         .catch(e => alert("Error loading data due to network issues"));  
+        
+    if (path === '/viewAll.html') {
+        axios.get("http://localhost:3000/Freelancers")
+        .then(response => {
+            const users = response.data;
+            users.forEach(user => {
+                $(".all-freelancers").append(
+                    `
+                    <div class='col-md-4'>
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-user-circle"></i> ${user.name}</h4>
+                                <p class="card-text"><i class="fas fa-envelope"></i> ${user.email}</p>
+                                <p class="card-text"><strong>Skill:</strong> ${user.skill}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="view.html?id=${user.id}" class="btn btn-sm btn-outline-info float-right">View Profile</a>
+                            </div>  
+                        </div>
+                    </div>
+                    `
+                );
+            });
+        })
+        .catch(e => alert("Error loading data due to network issues")); 
+    }
 
     // Registering a new freelancer
     $("#register").on('click', (e) => {
@@ -140,14 +186,14 @@ $(document).ready(function () {
                     axios.post("http://localhost:3000/Freelancers", input)
                         .then(response => {
                             // Do something when user successfully registers
-                            alert(`You are registered successfully ${response.data.name}. Your can login now`);
+                            // alert(`You are registered successfully ${response.data.name}. Your can login now`);
+                            window.location = "login.html";
                         })
                         .catch(e => console.log(e));
                 })
                 .catch(e => console.log(e));
         }
     });
-
 
     // Signing Freelancer In
     $("#login").on('click', (e) => {
@@ -207,6 +253,7 @@ $(document).ready(function () {
     /*  Profile handling goes here..  **/
     // Only do this in profile.html page
     if (path === '/profile.html') {
+
         // get the user info from the database and preload the fields
         axios.get(`http://localhost:3000/Freelancers/${userId}`)
             .then(response => {
@@ -275,6 +322,7 @@ $(document).ready(function () {
 
     // Only do this in editProfile.html
     if (path === '/editProfile.html') {
+
         // Get the user record from the database and auto fill the fields
         axios.get(`http://localhost:3000/Freelancers/${userId}`)
             .then(response => {
