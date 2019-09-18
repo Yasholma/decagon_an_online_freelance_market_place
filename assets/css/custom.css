@@ -146,7 +146,7 @@ nav ul li a.active {
 
 #right-section {
     position: absolute;
-    right: -86px;
+    right: -32px;
     top: 48px;
 }
 
@@ -156,6 +156,18 @@ nav ul li a.active {
 
 #logout {
     cursor: pointer;
+}
+
+iframe {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#about-page {
+    font-family: Quicksand;
+}
+
+#about-page .card {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 
@@ -308,10 +320,6 @@ nav ul li a.active {
     font-weight: normal;
     margin: 0;
   }
-  
-  @media (max-width: 767px) {
-    
-  }
 
 /* Media Queries Handline */
 @media only screen and (max-width: 767px) {
@@ -360,6 +368,14 @@ nav ul li a.active {
 
     #index-top-freelancers {
         font-size: 2.3rem;
+    }
+
+    #right-section, #left-section, iframe, #reg-link, #log-link {
+        display: none;
+    }
+
+    #reg-form {
+        z-index: 1;
     }
 
     /* Footer */

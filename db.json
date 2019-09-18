@@ -10,8 +10,8 @@
     {
       "name": "John Doe",
       "email": "johndoe@gmail.com",
-      "password": "123456",
-      "skill": "Footballer",
+      "password": "Admin@12",
+      "skill": "Mobile Developer",
       "id": 2
     },
     {

@@ -64,6 +64,26 @@ $(document).ready(function () {
         }
     });
 
+    // Get all skills from the database
+    if (path === "/index.html" || path === "/viewAll.html" || url === '/about.html') {
+        let skills = [];   
+        axios.get("http://localhost:3000/Freelancers")
+            .then(res => {
+                const users = res.data;
+                for (let i = 0; i <= 3; i++) {
+                    $("#popular-list").append(`
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">${users[i].skill}</a>
+                        </li>
+                    `);
+                }
+            })
+            .catch(e => console.log(e))
+
+        
+    }
+
+
     // Load freelancers from the database on the homepage
     // https://picsum.photos/200/100
     axios.get("http://localhost:3000/Freelancers?_start=0&_end=6")
