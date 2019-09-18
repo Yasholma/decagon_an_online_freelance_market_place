@@ -328,6 +328,15 @@ $(document).ready(function () {
                         alert("Your profile has been updated successfully");
                     })
                     .catch(e => console.log(e));
+
+                // $.ajax({
+                //     url: `http://localhost:3000/Freelancers/${userId}`,
+                //     method: 'PUT',
+                //     data: input,
+                //     cache: false,
+                //     success: res => alert("Your profile has been updated successfully"),
+                //     error: e => console.log(e)
+                // });
             }
         });
     }

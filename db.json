@@ -1,7 +1,7 @@
 {
   "Freelancers": [
     {
-      "name": "Cybertech Yasholma",
+      "name": "Yahaya Yohanna",
       "email": "yasholma@yahoo.com",
       "password": "Admin@12",
       "skill": "Java Developer",
@@ -62,6 +62,20 @@
       "password": "Admin@12",
       "skill": "Footballer",
       "id": 11
+    },
+    {
+      "name": "Test Test",
+      "email": "test@gmail.com",
+      "password": "Test@12",
+      "skill": "Web Designer",
+      "id": 12
+    },
+    {
+      "name": "ade Adedudu",
+      "email": "ade@ade.com",
+      "password": "123456@Ade",
+      "skill": "Senior  - Hacker",
+      "id": 13
     }
   ]
 }
