@@ -15,6 +15,37 @@ function confirmPassword(password, confirm) {
     return password.trim() === confirm.trim();
 }
 
+// Validate Phone Number
+function validatePhone(phone) {
+    let re = /\d{11}$/;
+    return re.test(phone);
+}
+
+// Validate Price
+function validatePrice(price) {
+    let re = /\d/g;
+    return re.test(price);
+}
+
+function readURL(input) {
+    for(var i =0; i< input.files.length; i++){
+        if (input.files[i]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = $('#imagePrev');
+                img.attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[i]);
+        }
+    }
+}
+
+$("#image").change(function(){
+    readURL(this);
+});
+
+
+
 // redirect function
 function redirectTo(url) {
     window.location.replace(url);
@@ -37,6 +68,8 @@ if (url === '/login.html' || url === '/register.html') {
 
 
 $(document).ready(function () {
+
+
     // Handling Sessions
     $("#logout").hide();
     $("#profile").hide();
@@ -94,7 +127,9 @@ $(document).ready(function () {
                     `
                     <div class='col-md-4'>
                         <div class="card mb-4">
-                            <img class="card-img-top" src="" alt="">
+                            <div class="col-md-4 mx-auto p-2">
+                                <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
+                            </div>
                             <div class="card-body">
                                 <h4 class="card-title"><i class="fas fa-user-circle"></i> ${user.name}</h4>
                                 <p class="card-text"><i class="fas fa-envelope"></i> ${user.email}</p>
@@ -120,7 +155,9 @@ $(document).ready(function () {
                     `
                     <div class='col-md-4'>
                         <div class="card mb-4">
-                            <img class="card-img-top" src="" alt="">
+                            <div class="col-md-4 mx-auto p-2">
+                                <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
+                            </div>
                             <div class="card-body">
                                 <h4 class="card-title"><i class="fas fa-user-circle"></i> ${user.name}</h4>
                                 <p class="card-text"><i class="fas fa-envelope"></i> ${user.email}</p>
@@ -281,9 +318,26 @@ $(document).ready(function () {
                 $("#profile-info").append(
                     `
                     <ul class="list-group">
-                        <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.name}</strong></li>
-                        <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.email}</li>
-                        <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
+                        <div class="row">
+                            <div class="col-md-6 mx-auto">
+                                <div class="text-center mb-1">
+                                    <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.name}</strong></li>
+                                <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.email}</li>
+                                <li class="list-group-item"><i class="fas fa-user border-right pr-1"></i> ${user.gender !== undefined ? user.gender : 'NA'}</li>
+                                <li class="list-group-item"><i class="fas fa-phone border-right pr-1"></i> ${user.phone !== undefined ? user.phone : 'NA'}</li>
+                                <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
+                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#8358; ${user.price !== undefined ? user.price : 'NA'} / Hour (Negotiable)</li>
+                            </div>
+                            <div class="col-md-6">
+                                <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.description !== undefined ? user.description : 'NA'}</li>
+                            </div>
+                        </div>
                     </ul>
                     `
                 );
@@ -329,9 +383,26 @@ $(document).ready(function () {
                 $("#freelance-profile-info").append(
                     `
                     <ul class="list-group">
-                        <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.name}</strong></li>
-                        <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.email}</li>
-                        <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
+                        <div class="row">
+                            <div class="col-md-6 mx-auto">
+                                <div class="text-center mb-1">
+                                    <img src="./assets/img/users/${user.image !== undefined ? user.image : 'no_image.jpg'}" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <li class="list-group-item"><i class="fas fa-user-circle border-right pr-1"></i> <strong>${user.name}</strong></li>
+                                <li class="list-group-item"><i class="fas fa-envelope border-right pr-1"></i> ${user.email}</li>
+                                <li class="list-group-item"><i class="fas fa-user border-right pr-1"></i> ${user.gender !== undefined ? user.gender : 'NA'}</li>
+                                <li class="list-group-item"><i class="fas fa-phone border-right pr-1"></i> ${user.phone !== undefined ? user.phone : 'NA'}</li>
+                                <li class="list-group-item"><i class="fas fa-cogs border-right pr-1"></i> ${user.skill}</li>
+                                <li class="list-group-item"><i class="fas fa-money-bill border-right pr-1"></i> &#8358; ${user.price !== undefined ? user.price : 'NA'} / Hour (Negotiable)</li>
+                            </div>
+                            <div class="col-md-6">
+                                <li class="list-group-item"><i class="fab fa-invision border-right pr-1"></i> ${user.description !== undefined ? user.description : 'NA'}</li>
+                            </div>
+                        </div>
                     </ul>
                     `
                 );
@@ -351,24 +422,44 @@ $(document).ready(function () {
                 $("#email").val(user.email);
                 $("#password").val(user.password);
                 $("#skill").val(user.skill);
+                $("#phone").val(user.phone);
+                $("#price").val(user.price);
+                $("#gender").val(user.gender);
+                $("#description").val(user.description);
+                $("#prevImage").val(user.image);
+                $("#imagePrev").prop('src', `./assets/img/users/${user.image}`)
             })
             .catch(e => console.log(e));
 
         $("#updateBtn").on('click', (e) => {
             e.preventDefault();
 
+            let file = $('input#image')[0].files;
+            let imageName = file.length > 0 ? file[0].name : "";
+            
+
             let name = $("#name").val();
             let email = $("#email").val();
             let password = $("#password").val();
             let skill = $("#skill").val();
+            let phone = $("#phone").val();
+            let price = $("#price").val();
+            let gender = $("#gender").val();
+            let description = $("#description").val();
+            let image = imageName !== "" ? imageName : $("#prevImage").val();
+
 
             // Error feilds
             let nameError = $("#nameError");
             let passwordError = $("#passwordError");
             let skillError = $("#skillError");
+            let phoneError = $("#phoneError");
+            let priceError = $("#priceError");
+            let genderError = $("#genderError");
+            let descriptionError = $("#descriptionError");
             let registerGeneralError = $("#registerGeneralError");
 
-            if (name === "" || password === "" || skill === "") {
+            if (name === "" || password === "" || skill === "" || phone === "" || price === "" || gender.length === 0 || description === "") {
                 registerGeneralError.removeClass('d-none');
             } else if (name === "" || name.length < 6) {
                 $("#name").css('border', '1px solid red');
@@ -382,29 +473,37 @@ $(document).ready(function () {
             } else if (skill.length <= 3 || skill === "") {
                 $("#skill").css('border', '1px solid red');
                 skillError.text("Skill minimum length is 4");
+            } else if (!validatePhone(phone)) {
+                $("#phone").css('border', '1px solid red');
+                phoneError.text("Enter a valid phone number of 11 characters");
+            } else if (!validatePrice(price)) {
+                $("#price").css('border', '1px solid red');
+                priceError.text("Price can only be numbers");
+            } else if (gender === undefined || gender.length <= 0) {
+                $("#gender").css('border', '1px solid red');
+                genderError.text("Skill minimum length is 4");
+            } else if (description.length < 10 || description.length > 700 || description === "") {
+                $("#description").css('border', '1px solid red');
+                descriptionError.text("Please, a brief information about yourself, skills and experience");
             } else {
                 // Remove white trailing spaces from all input values
                 name = name.trim();
                 email = email.trim();
                 password = password.trim();
                 skill = skill.trim();
+                phone = phone.trim();
+                price = price.trim();
+                gender = gender.trim();
+                description = description.trim();
+                
 
-                const input = { name, email, password, skill };
+                const input = { name, email, password, skill, phone, price, gender, description, image };
 
                 axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
                     .then(res => {
                         alert("Your profile has been updated successfully");
                     })
                     .catch(e => console.log(e));
-
-                // $.ajax({
-                //     url: `http://localhost:3000/Freelancers/${userId}`,
-                //     method: 'PUT',
-                //     data: input,
-                //     cache: false,
-                //     success: res => alert("Your profile has been updated successfully"),
-                //     error: e => console.log(e)
-                // });
             }
         });
     }

@@ -5,20 +5,35 @@
       "email": "yasholma@yahoo.com",
       "password": "Admin@12",
       "skill": "Java Developer",
+      "phone": "08067764535",
+      "price": "4000",
+      "gender": "Male",
+      "description": "I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy.I code with Java and have a lot of experience. I can replicate almost anything you want. Select me and enjoy. have a lot of experience. I can replicate almost anything you want. Select me and enjoy.have a lot of experience. I can replicate almost anything you want. Select me and enjoy.",
+      "image": "face1.jpg",
       "id": 1
     },
     {
-      "name": "John Doe",
+      "name": "John Alex",
       "email": "johndoe@gmail.com",
       "password": "Admin@12",
       "skill": "Mobile Developer",
+      "phone": "08056787643",
+      "price": "7000",
+      "gender": "Male",
+      "description": "Use an android application that can enhance your company's credibility. Contact me for more details.",
+      "image": "face3.jpg",
       "id": 2
     },
     {
       "name": "Mary Jane",
-      "email": "maryjane",
-      "password": "123456",
+      "email": "maryjane@gmail.com",
+      "password": "Admin@12",
       "skill": "C# Developer",
+      "phone": "09033445566",
+      "price": "4000",
+      "gender": "Female",
+      "description": ".NET Apps is what i do. Contact me and get amazing secured apps.",
+      "image": "face2.jpg",
       "id": 4
     },
     {
@@ -90,6 +105,31 @@
       "password": "Mike@123",
       "skill": "Modeling",
       "id": 15
+    },
+    {
+      "name": "Folahanmi Kolawole",
+      "email": "emmanuelkolawole4@gmail.com",
+      "password": "Fola12321@@",
+      "skill": "Full Stack Developer",
+      "id": 16
+    },
+    {
+      "name": "John Mile",
+      "email": "john@gmail.com",
+      "password": "Password@12",
+      "skill": "Stylist",
+      "id": 17
+    },
+    {
+      "name": "Test Test",
+      "email": "test1@gmail.com",
+      "password": "Test@12",
+      "skill": "Tester",
+      "phone": "08066774533",
+      "price": "3000",
+      "gender": "Female",
+      "description": "I love what i do and that is testing.",
+      "id": 18
     }
   ]
 }

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FMP | Edit Profile</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="./assets/css/all.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- JQuery and Session -->
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/jquerysession.js"></script>
+    <style>
+        ul, h4, h5, input, textarea {
+            font-family: Quicksand;
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="logo">Logo</div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li id="signup"><a href="./register.html" class="active signup">Sign Up</a></li>
+            <li id="signin"><a href="./login.html" class="active signin">Sign In</a></li>
+            <li id="profile"><a href="./profile.html" class="active signup"><i class="fas fa-user-circle"></i> Profile</a></li>
+            <li id="logout"><a class="active logout">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+    </nav>
+    <section class="sect1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto mt-4">
+                    <form method="POST" class="card bg-white p-4">
+                        <h5 class="text-center text-uppercase">Edit My Profile</h5>
+                        <div class="alert alert-danger d-none" id="registerGeneralError"><small><strong>All fields are required</strong></small></div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="name" id="name" class="form-control">
+                                    <small id="nameError" class="text-danger"></small>
+                                </div>
+        
+                                <div class="form-group">
+                                    <input type="text" name="email" id="email" class="form-control" disabled>
+                                </div>
+        
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control">
+                                    <small id="passwordError" class="text-danger"></small>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="image">
+                                        <label class="custom-file-label" for="image">Choose Profile </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <img src="" id="imagePrev" class="img-fluid rounded rounded-circle" alt="">
+                                    <input type="hidden" name="prevImage">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="skill" id="skill" class="form-control">
+                                    <small id="skillError" class="text-danger"></small>
+                                </div>
+        
+                                <!-- Gender -->
+                                <div class="form-group">
+                                    <select name="gender" id="gender" class="form-control">
+                                        <option value="">-- Select Gender --</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                    <small id="genderError" class="text-danger"></small>
+                                </div>
+        
+                                <!-- Phone Number -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number">
+                                    <small id="phoneError" class="text-danger"></small>
+                                </div>
+        
+                                <!-- Standard Price -->
+                                <div class="form-group">
+                                    <input type="text" id="price" name="price" class="form-control" placeholder="Enter your price">
+                                    <small id="priceError" class="text-danger"></small>
+                                </div>
+        
+                                <!-- Description -->
+                                <div class="form-group">
+                                    <textarea name="description" id="description" cols="30" placeholder="Enter details about yourself, why the client should choose you..." rows="5" class="form-control"></textarea>
+                                    <small id="descriptionError" class="text-danger"></small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Update button -->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="./profile.html" class="btn btn-outline-primary btn-block"><i class="fas fa-chevron-circle-left"></i> Back to profile</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="updateBtn" class="btn btn-outline-success btn-block">Update <i class="fas fa-user-edit"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left col-md-4 col-sm-6">
+            <h4 class="text-center text-white"> About the company</h4>
+            <p class="about">
+                Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,
+            ultricies feugiat leo. Suspendisse tellus elit, pharetra in hendrerit ut, aliquam quis augue. Nam ut nibh mollis, tristique ante sed, viverra massa.
+            </p>
+            <div class="icons">
+            <a href="https://facebook.com/yasholma"><i class="fab fa-facebook"></i></a>
+            <a href="https://facebook.com/twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/yahaya-hyellamoda-yohanna-72a373150"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yasholma"><i class="fab fa-github"></i></a>
+            <a href="https://instagram/xcybertech"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-center col-md-4 col-sm-6">
+            <div>
+            <p><i class="fa fa-map-marker"></i><span> Mile Six</span> Jalingo, Nigeria</p>
+            </div>
+            <div>
+            <p><i class="fa fa-phone"></i> (+234) 8067 764 535</p>
+            </div>
+            <div>
+            
+            <p><i class="fa fa-envelope"></i><a href="#"> yahayahyohanna@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right col-md-4 col-sm-6">
+            <h2> FMP - <span> Decagon</span></h2>
+            <p class="menu">
+            <a href="./index.html"> Home</a> |
+            <a href="./about.html"> About</a>
+            </p>
+            <p class="name"> Cybertech FMP - Decagon &copy; 2019</p>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/all.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Axios -->
+    <script src="./assets/js/axios.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="./index.js"></script>
+  </body>
+</html>

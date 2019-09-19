@@ -1,7 +1,8 @@
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>FMP | Edit Profile</title>
+    <title>FMP | FreeLance Registration</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,55 +15,63 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet"> 
     <!-- Custom Css -->
     <link rel="stylesheet" href="./assets/css/custom.css">
-    <!-- JQuery and Session -->
-    <script src="./assets/js/jquery-3.2.1.min.js"></script>
-    <script src="./assets/js/jquerysession.js"></script>
+
   </head>
   <body>
     <nav>
-        <div class="logo">Logo</div>
+        <div class="logo">FMP - Decagon</div>
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./about.html">About Us</a></li>
-            <li id="signup"><a href="./register.html" class="active signup">Sign Up</a></li>
-            <li id="signin"><a href="./login.html" class="active signin">Sign In</a></li>
-            <li id="profile"><a href="./profile.html" class="active signup"><i class="fas fa-user-circle"></i> Profile</a></li>
-            <li id="logout"><a class="active logout">Logout <i class="fas fa-sign-out"></i></a></li>
+            <li><a href="./register.html" class="active signup">Sign Up</a></li>
+            <li><a href="./login.html" class="active">Sign In</a></li>
         </ul>
     </nav>
     <section class="sect1">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mx-auto mt-4">
-                    <form method="POST" class="card bg-white p-4">
-                        <h5 class="text-center text-uppercase">Edit My Profile</h5>
+                    <form method="post" id="reg-form" class="card bg-white p-4">
+                        <h5 class="text-center text-uppercase">Register as a FreeLancer</h5>
                         <div class="alert alert-danger d-none" id="registerGeneralError"><small><strong>All fields are required</strong></small></div>
                         <hr>
 
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter Full Name">
                             <small id="nameError" class="text-danger"></small>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="email" id="email" class="form-control" disabled>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Enter email address">
+                            <small id="emailError" class="text-danger"></small>
                         </div>
 
                         <div class="form-group">
-                            <input type="password" name="password" id="password" class="form-control">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password">
                             <small id="passwordError" class="text-danger"></small>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="skill" id="skill" class="form-control">
+                            <input type="password" name="confirm" id="confirm" class="form-control" placeholder="Confirm password">
+                            <small id="confirmError" class="text-danger"></small>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter phone number">
+                            <small id="phoneError" class="text-danger"></small>
+                        </div> -->
+
+                        <div class="form-group">
+                            <input type="text" name="skill" id="skill" class="form-control" placeholder="Enter skill (e.g => Web Developer)">
                             <small id="skillError" class="text-danger"></small>
                         </div>
 
-                        <!-- Sign In button -->
+                        <!-- Register In button -->
                         <div class="form-group">
-                            <button id="updateBtn" class="btn btn-outline-success btn-block">Update <i class="fas fa-user-edit"></i></button>
+                          <button id="register" class="btn btn-outline-primary btn-block">Register <i class="fa fa-user" aria-hidden="true"></i> </button>
                         </div>
 
+                        <a href="./login.html" id="log-link">Already have an account? Login</a>
                     </form>
                 </div>
             </div>
@@ -110,6 +119,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/jquerysession.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/all.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>

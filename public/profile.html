@@ -17,6 +17,11 @@
     <!-- JQuery and Session -->
     <script src="./assets/js/jquery-3.2.1.min.js"></script>
     <script src="./assets/js/jquerysession.js"></script>
+    <style>
+        ul, h4 {
+            font-family: Quicksand;
+        }
+    </style>
   </head>
   <body>
     <nav>
@@ -27,18 +32,19 @@
             <li id="signup"><a href="./register.html" class="active signup">Sign Up</a></li>
             <li id="signin"><a href="./login.html" class="active signin">Sign In</a></li>
             <li id="profile"><a href="./profile.html" class="active signup"><i class="fas fa-user-circle"></i> Profile</a></li>
-            <li id="logout"><a class="active logout">Logout <i class="fas fa-sign-out"></i></a></li>
+            <li id="logout"><a class="active logout">Logout <i class="fas fa-sign-out-alt"></i></a></li>
         </ul>
     </nav>
     <section class="sect1">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mx-auto" id="profile-page">
+                <div class="col-md-10 mx-auto" id="profile-page">
                     <div class="card p-4 mt-4"  style="background: transparent; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
                         <div>
                             <h4 class="text-center"><span id="name">My</span> Profile <button id="deleteAccount" class="btn btn-danger btn-sm float-right"><i class="fas fa-exclamation-circle"></i> Delete my account</button></h4>
                         </div>
                         <div class="card-body" id="profile-info">
+                            <!-- jQuery Populates Data -->
                             
                         </div>
                         <div>
