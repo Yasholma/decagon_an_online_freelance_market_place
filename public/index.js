@@ -44,8 +44,6 @@ $("#image").change(function(){
     readURL(this);
 });
 
-
-
 // redirect function
 function redirectTo(url) {
     window.location.replace(url);
@@ -68,8 +66,6 @@ if (url === '/login.html' || url === '/register.html') {
 
 
 $(document).ready(function () {
-
-
     // Handling Sessions
     $("#logout").hide();
     $("#profile").hide();
@@ -98,8 +94,7 @@ $(document).ready(function () {
     });
 
     // Get all skills from the database
-    if (path === "/index.html" || path === "/viewAll.html" || url === '/about.html') {
-        let skills = [];   
+    if (path === "/index.html" || path === "/viewAll.html" || url === '/about.html') {  
         axios.get("http://localhost:3000/Freelancers")
             .then(res => {
                 const users = res.data;
@@ -111,14 +106,11 @@ $(document).ready(function () {
                     `);
                 }
             })
-            .catch(e => console.log(e))
-
-        
+            .catch(e => console.log(e));
     }
 
 
     // Load freelancers from the database on the homepage
-    // https://picsum.photos/200/100
     axios.get("http://localhost:3000/Freelancers?_start=0&_end=6")
         .then(response => {
             const users = response.data;
@@ -261,12 +253,12 @@ $(document).ready(function () {
         let emailError = $("#emailError");
         let passwordError = $("#passwordError");
 
-        if (email == "" || password == "") {
+        if (email === "" || password === "") {
             emailError.text("Required field");
             passwordError.text("Required feild");
-        } else if (email == "") {
+        } else if (email === "") {
             emailError.text("Email is required");
-        } else if (password == "") {
+        } else if (password === "") {
             passwordError.text("Password field is required");
         } else {
             // Attemp to sign in freelancer
