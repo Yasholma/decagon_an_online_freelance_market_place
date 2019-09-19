@@ -21,6 +21,18 @@
         ul, h4, h5, input, textarea {
             font-family: Quicksand;
         }
+        /* Media Queries Handline */
+        @media only screen and (max-width: 767px) {
+            .sect1 {
+                height: 130vh;
+            }
+            .back {
+                margin-bottom: 10px;
+            }
+            #profile-page {
+                margin-top: 0 !important;
+            }
+        }
     </style>
   </head>
   <body>
@@ -61,7 +73,7 @@
 
                                 <div class="form-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="image">
+                                        <input type="file" accept="image/*" multiple="false" class="custom-file-input" id="image">
                                         <label class="custom-file-label" for="image">Choose Profile </label>
                                     </div>
                                 </div>
@@ -112,7 +124,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <a href="./profile.html" class="btn btn-outline-primary btn-block"><i class="fas fa-chevron-circle-left"></i> Back to profile</a>
+                                    <a href="./profile.html" class="btn btn-outline-primary btn-block back"><i class="fas fa-chevron-circle-left"></i> Back to profile</a>
                                 </div>
                                 <div class="col-md-6">
                                     <button id="updateBtn" class="btn btn-outline-success btn-block">Update <i class="fas fa-user-edit"></i></button>

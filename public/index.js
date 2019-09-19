@@ -494,6 +494,7 @@ $(document).ready(function () {
                 axios.put(`http://localhost:3000/Freelancers/${userId}`, input)
                     .then(res => {
                         alert("Your profile has been updated successfully");
+                        redirectTo('profile.html');
                     })
                     .catch(e => console.log(e));
             }

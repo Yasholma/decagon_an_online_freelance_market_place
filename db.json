@@ -39,22 +39,37 @@
     {
       "name": "Moose Ken",
       "email": "yasholma1@gmail.com",
-      "password": "123456",
+      "password": "Admin@12",
       "skill": "Designer",
+      "phone": "08103477988",
+      "price": "4000",
+      "gender": "Male",
+      "description": "Make amazing designs with me, wow, i can surprise you.",
+      "image": "face4.jpg",
       "id": 5
     },
     {
       "name": "Adamu Ali",
       "email": "adamu@gmail.com",
-      "password": "123456",
+      "password": "Admin@12",
       "skill": "Tester",
+      "phone": "08101234567",
+      "price": "6000",
+      "gender": "Male",
+      "description": "I test your application, i can handle critical test and ensure your application meets the ultimate test.",
+      "image": "face7.jpg",
       "id": 7
     },
     {
       "name": "Smith Kingsley",
       "email": "smith@gmail.com",
-      "password": "123456",
+      "password": "Admin@12",
       "skill": "Analyst",
+      "phone": "08088998899",
+      "price": "10000",
+      "gender": "Male",
+      "description": "You need your problem to be analysed? I am the best candidate in the game. Just checkout my profile.",
+      "image": "face8.jpg",
       "id": 8
     },
     {
@@ -70,13 +85,6 @@
       "password": "123456",
       "skill": "C# Developer",
       "id": 10
-    },
-    {
-      "name": "Christiano Ronaldo",
-      "email": "ronaldo@gmail.com",
-      "password": "Admin@12",
-      "skill": "Footballer",
-      "id": 11
     },
     {
       "name": "Test Test",
